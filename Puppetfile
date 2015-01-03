@@ -59,3 +59,14 @@ github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+
+# For the latest build of v3
+include sublime_text
+sublime_text::package { 'Emmet':
+   source => 'sergeche/emmet-sublime'
+}
+include rvm
+rvm::system_user { prussiap: ; } #i might need a system user set with puppet?
+include chrome
+include mysql5
+
