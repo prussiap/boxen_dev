@@ -57,16 +57,47 @@ github "stdlib",      "4.2.1", :repo => "puppetlabs/puppetlabs-stdlib"
 github "sudo",        "1.0.0"
 github "xquartz",     "1.2.1"
 
+
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
+# ruby version
+# ensure a gem is installed for all ruby versions
+ ruby_gem { 'bundler for all rubies':
+   gem          => 'bundler',
+   version      => '~> 1.0',
+   ruby_version => '*',
+    }
+
+  # default ruby versions
+  ruby::version { '1.9.3': }
+  ruby::version { '2.0.0': }
+  ruby::version { '2.1.0': }
 
 # For the latest build of v3
 include sublime_text
 sublime_text::package { 'Emmet':
    source => 'sergeche/emmet-sublime'
 }
-include rvm
-rvm::system_user { prussiap: ; } #i might need a system user set with puppet?
+#include rvm
+#rvm::system_user { prussiap: ; } #i might need a system user set with puppet?
+github "adium"
+github "memcached"
+github "heroku"
+github "teamviewer"
+github "processing"
+github "redis"
+github "arduino"
+github "imagemagick"
+github "python"
+github "sonos"
+github "iterm2"
+github "dropbox"
+github "firefox"
+github "vagrant"
 include chrome
 include mysql5
+include sparrow
+include spotify
+include vlc
+include virtualbox
 

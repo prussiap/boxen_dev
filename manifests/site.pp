@@ -57,6 +57,11 @@ node default {
   include git
   include hub
   include nginx
+  include ruby
+  include homebrew
+  include sublime_text
+  include skype
+  include redis
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
